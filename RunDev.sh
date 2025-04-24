@@ -28,9 +28,13 @@ if [ ! -d "/thrive/admin/.env" ]; then
     fi
     echo "admin目录初始化完成"
 fi
-which npm
+
+echo '----- .env -----'
+cat /thrive/admin/.env
+echo '----- .env -----'
+which vite
 if [ $? -ne 0 ]; then
-    echo "npm不存在m"
+    echo "vite 不存在"
     exit 3
 fi
 cd /thrive/admin
@@ -38,5 +42,5 @@ if [ $? -ne 0 ]; then
     echo "进入 /thrive/admin 目录失败"
    exit 4
 fi
-echo "Start npm dev"
-npm dev run
+echo "Run: vite"
+vite
